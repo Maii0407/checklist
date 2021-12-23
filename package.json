@@ -1,0 +1,26 @@
+{
+  "name": "checklist",
+  "version": "1.0.0",
+  "description": "Chechklist or To-Do-List project that is made using webpack module bundler and also first project that introduce me to storing data inside users local storage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maii0407/checklist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maii0407/checklist/issues"
+  },
+  "homepage": "https://github.com/Maii0407/checklist#readme",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
