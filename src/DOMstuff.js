@@ -1,103 +1,63 @@
-//this is a module for dom related shenanigans
 
 const DOMstuff = (function(){
-    const container = document.getElementById('container');
+//private
+    const _makeContentWrapper = function(){
+        const container = document.getElementById('container');
+        const contentWrapper = document.createElement('div');
+        contentWrapper.classList.add('mainContent-wrapper');
+        container.appendChild(contentWrapper);
 
-//private section because why not
-    const _makeHeader = function(){
-        const upperContainer = document.createElement('div');
-        upperContainer.classList.add('upper-container');
-        container.appendChild(upperContainer);
-
-        const header = document.createElement('h1');
-        header.textContent = `maii checkLIST`;
-        upperContainer.appendChild(header);
-
-        return upperContainer;
+        return contentWrapper;
     };
 
-    const _makeMainContent = function(){
-        const mainContent = document.createElement('div');
-        mainContent.classList.add('mainContent-container');
-        container.appendChild(mainContent);
+    const _makeProjectSection = function(){
+        const projectSelection = document.createElement('div');
+        projectSelection.classList.add('project-section');
+        document.querySelector('.mainContent-wrapper').appendChild(projectSelection);
 
-        return mainContent;
+        return projectSelection;
     };
 
-    const _makePageListContainer = function(){
-        const pagesList = document.createElement('div');
-        pagesList.classList.add('pagesList-container');
-        document.querySelector('.mainContent-container').appendChild(pagesList);
+    const _makeTaskSection = function(){
+        const taskSection = document.createElement('div');
+        taskSection.classList.add('task-section');
+        document.querySelector('.mainContent-wrapper').appendChild(taskSection);
 
-        return pagesList;
+        return taskSection;
     };
 
-    const _makePageContainer = function(){
-        const pageContainer = document.createElement('div');
-        pageContainer.classList.add('page-container');
-        document.querySelector('.mainContent-container').appendChild(pageContainer);
+    const _makeProjectSectionHeader = function(){
+        const projectSectionHeader = document.createElement('h1');
+        projectSectionHeader.innerText = `Projects`;
+        document.querySelector('.project-section').appendChild(projectSectionHeader);
 
-        return pageContainer;
+        return projectSectionHeader;
     };
 
-    const _makePageListHeader = function(){
-        const pageListHeader = document.createElement('h1');
-        pageListHeader.textContent = `PROJECTS`;
-        document.querySelector('.pagesList-container').appendChild(pageListHeader);
+    const _makeCreateProjectBtn = function(){
+        const createProjectBtn = document.createElement('button');
+        createProjectBtn.classList.add('createProject-btn');
+        createProjectBtn.innerText = ` + NEW PROJECT`;
+        document.querySelector('.project-section').appendChild(createProjectBtn);
 
-        return pageListHeader;
+        return createProjectBtn;
     };
 
-    const _makeNewPageBtn = function(){
-        const newProjectBtn = document.createElement('button');
-        newProjectBtn.classList.add('newProject-btn');
-        newProjectBtn.textContent = `+ NEW PROJECT`;
-        document.querySelector('.pagesList-container').appendChild(newProjectBtn);
-
-        return newProjectBtn;
+//public
+    const makeSkeleton = function(){
+        _makeContentWrapper();
+        _makeProjectSection();
+        _makeTaskSection();
+        _makeCreateProjectBtn();
+        _makeProjectSectionHeader();
     };
 
-    const _removeRow = function(button){
-        let r = button.parentNode.parentNode.rowIndex;
-        document.querySelector('.project-btn').deleteRow(r);
-    };
-
-
-    const _makeProject = function(){
-        let projectName = prompt(`What is the name of the new project?`);
-        if(projectName == null || projectName == ''){
-            projectName = `empty`;
-        };
-
-        const newProject = document.createElement('table');
-
-        let row = newProject.insertRow();
-        row.insertCell().innerHTML = `<button class="remove-btn">X</button>`;
-        row.insertCell().textContent = projectName;
-        newProject.classList.add('project-btn');
-        document.querySelector('.pagesList-container').appendChild(newProject);
-
-        return newProject;
-    };
-
-//this is for all people to see
-    const makeDefault = function(){
-        _makeHeader();
-        _makeMainContent();
-        _makePageListContainer();
-        _makeNewPageBtn();
-        _makePageListHeader();
-        _makePageContainer();
-    };
-
-    const makeProject = function(){
-        _makeProject();
-    };
+       
 
     return{
-        makeDefault,
-        makeProject,
+        makeSkeleton,
     };
+
 })();
 
 export {DOMstuff};

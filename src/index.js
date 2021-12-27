@@ -1,11 +1,9 @@
 import './style.css';
-import {DOMstuff} from './DOMstuff.js';
-import { Logic } from './logic';
+import { DOMstuff } from "./DOMstuff";
+import { Project } from './project';
 
-const maiiCheckList = (function(){
-    DOMstuff.makeDefault();
+const Checklist = (function(){
+    DOMstuff.makeSkeleton();
 
-    document.querySelector('.newProject-btn').addEventListener('click', function(){
-        DOMstuff.makeProject();
-    });
+    Project.logThis();
 })();

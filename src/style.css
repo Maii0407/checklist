@@ -1,107 +1,52 @@
 body {
-    background-color: gray;
-    font-family: 'Shadows Into Light', cursive;
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
 #container {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
-.upper-container h1 {
-    border-radius: 20px 0;
-    background-color: black;
-    border: 1px solid white;
-    opacity: 0.8;
-    width: 200px;
-    padding: 5px;
-    padding-right: 40px;
-    margin-left: 2%;
-    color: white;
-    font-size: 30px;
-    text-align: center;
-}
-
-.mainContent-container {
+.mainContent-wrapper {
     width: 100%;
-    height: 500px;
-    max-height: 3000px;
+    max-height: 2000px;
     display: flex;
     flex-direction: row;
 }
 
-.pagesList-container {
+.project-section {
+    border: 1px solid red;
     width: 30%;
-    max-height: 3000px;
-    border: 1px solid blue;
+    height: 500px;
+    max-height: 2000px;
     display: flex;
     flex-direction: column;
 }
-
-.pagesList-container h1 {
+.project-section h1 {
     color: black;
-    width: 90%;
-    height: 50px;
-    margin-left: 5%;
-    text-align: center;
     border-bottom: 1px solid black;
-    text-align: left;
-    text-indent: 20px;
+    width: 95%;
+    text-indent: 5%;
+    margin-left: 2%;
 }
-
-.page-container {
-    width: 70%;
-    max-height: 3000px;
-    border: 1px solid red;
-}
-
-.newProject-btn {
-    width: 70%;
+.createProject-btn {
+    background-color: rgba(0, 255, 0, 0.5);
     border: none;
-    border-radius: 10px 0;
-    background-color: rgba(0, 255, 0, 0.55);
-    font-family: 'Shadows Into Light', cursive;
-    color: black;
-    font-size: 20px;
-    margin: 2%;
-    cursor: pointer;
     text-align: left;
+    text-indent: 2%;
+    width: 80%;
+    padding: 3%;
+    margin: 3%;
+    cursor: pointer;
+    font-weight: bold;
 }
-
-.newProject-btn:hover {
+.createProject-btn:hover {
     background-color: rgba(0, 255, 0, 1);
 }
 
-.project-btn {
-    width: 90%;
-    border-radius: 10px 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0.8;
-    font-family: 'Shadows Into Light', cursive;
-    color: white;
-    font-size: 20px;
-    margin: 2%;
-    cursor: pointer;
-}
-
-.project-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.remove-btn {
-    background-color: red;
-    opacity: 0.5;
-    border: none;
-    border-radius: 10px 0;
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 20px;
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    cursor: pointer;
-}
-
-.remove-btn:hover {
-    opacity: 1;
+.task-section {
+    border: 1px solid blue;
+    width: 70%;
+    height: 500px;
+    max-height: 2000px;
 }
