@@ -57,15 +57,25 @@ const DOMstuff = (function(){
         return newProjectBtn;
     };
 
-    const _makeProject = function(){
-        const newProject = document.createElement('div');
-        newProject.classList.add('project-btn');
-        newProject.textContent = prompt(`What is the name of the new project?`);
-        document.querySelector('.pagesList-container').appendChild(newProject);
+    const _removeRow = function(button){
+        let r = button.parentNode.parentNode.rowIndex;
+        document.querySelector('.project-btn').deleteRow(r);
+    };
 
-        if(newProject.textContent == null || newProject.textContent == ''){
-            newProject.textContent = `default project name`;
+
+    const _makeProject = function(){
+        let projectName = prompt(`What is the name of the new project?`);
+        if(projectName == null || projectName == ''){
+            projectName = `empty`;
         };
+
+        const newProject = document.createElement('table');
+
+        let row = newProject.insertRow();
+        row.insertCell().innerHTML = `<button class="remove-btn">X</button>`;
+        row.insertCell().textContent = projectName;
+        newProject.classList.add('project-btn');
+        document.querySelector('.pagesList-container').appendChild(newProject);
 
         return newProject;
     };
