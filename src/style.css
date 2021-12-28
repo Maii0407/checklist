@@ -5,48 +5,67 @@ body {
 #container {
     width: 100%;
     height: 100%;
-}
-
-.mainContent-wrapper {
-    width: 100%;
-    max-height: 2000px;
-    display: flex;
-    flex-direction: row;
-}
-
-.project-section {
-    border: 1px solid red;
-    width: 30%;
-    height: 500px;
-    max-height: 2000px;
     display: flex;
     flex-direction: column;
 }
-.project-section h1 {
-    color: black;
-    border-bottom: 1px solid black;
-    width: 95%;
-    text-indent: 5%;
-    margin-left: 2%;
-}
-.createProject-btn {
-    background-color: rgba(0, 255, 0, 0.5);
-    border: none;
-    text-align: left;
-    text-indent: 2%;
-    width: 80%;
-    padding: 3%;
-    margin: 3%;
-    cursor: pointer;
-    font-weight: bold;
-}
-.createProject-btn:hover {
-    background-color: rgba(0, 255, 0, 1);
+
+.checklist-container {
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
 }
 
-.task-section {
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.header-container h1 {
+    border: 1px solid red;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.task-container {
     border: 1px solid blue;
-    width: 70%;
-    height: 500px;
-    max-height: 2000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    width: 100%;
+    display: grid;
+    margin-top: 1%;
+}
+.task-input {
+    grid-row: 1/2;
+    grid-column: 1/3;
+}
+.date-input {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+.form-container button {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+.newProject-btn {
+    width: 30%;
+    background-color: green;
+    border: none;
+    padding: 1%;
+    text-align: left;
+    text-indent: 3%;
+    font-size: 20px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+}
+.newProject-btn:hover {
+    background-color: rgba(0, 255, 0, 1)
 }
