@@ -31,6 +31,12 @@ const CheckList = (function(){
     makeProject();
 
     document.querySelector('.newProject-btn').addEventListener('click', _makeNewProject);
+    document.querySelector('.open-btn').addEventListener('click', function(){
+        document.querySelector('.projectForm-container').style.width = '250px';
+    })
+    document.querySelector('.close-btn').addEventListener('click', function(){
+        document.querySelector('.projectForm-container').style.width = '0';
+    })
 
     
 })();

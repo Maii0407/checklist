@@ -1,3 +1,4 @@
+import openProjectForm from './outline_menu_black_24dp.png';
 
 const DOMstuff = (function(){
 
@@ -51,15 +52,35 @@ const _makeProject = function(name){
         return newProject;
     };
 
+    const _makeCloseBtn = function(){
+        const closeBtn = document.createElement('button');
+        closeBtn.classList.add('close-btn');
+        closeBtn.innerText = `X`;
+        document.querySelector('.projectForm-container').appendChild(closeBtn);
+
+        return closeBtn;
+    };
+
+    const _makeOpenProjectFormBtn = function(){
+        const openBtn = document.createElement('img');
+        openBtn.src = openProjectForm;
+        openBtn.classList.add('open-btn')
+        document.getElementById('uppercontainer').appendChild(openBtn);
+
+        return openBtn;
+    };
+
 //public
     const makeProject = function(name){
         _makeProject(name);
     };
 
     const makeProjectForm = function(){
+        _makeOpenProjectFormBtn();
         _makeProjectFormContainer();
         _makeProjectForm();
         _makeProjectBtn();
+        _makeCloseBtn();
     };
 
     return {
