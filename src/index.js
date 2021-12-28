@@ -3,7 +3,7 @@ import { DOMstuff } from "./DOMstuff";
 import { Project } from './project';
 
 const CheckList = (function(){
-    DOMstuff.makeProjectBtn();
+    DOMstuff.makeProjectForm();
     Project.ProjectList;
 
 //private
@@ -12,6 +12,17 @@ const CheckList = (function(){
             DOMstuff.makeProject(obj.name);
         }
     };
+
+    const _makeNewProject = function(newProject){
+        const text = document.getElementById('project-input');
+
+        newProject = new Project.myProject(text.value);
+        Project.ProjectList.push(newProject);
+        document.getElementById('container').innerHTML = '';
+        text.value = '';
+        _makeProject();
+    };
+
 //public
     const makeProject = function(){
         _makeProject();
@@ -19,11 +30,7 @@ const CheckList = (function(){
 
     makeProject();
 
-    document.querySelector('.newProject-btn').addEventListener('click', function(){
-        newProjectName = prompt(`What is the name of the new project?`);
+    document.querySelector('.newProject-btn').addEventListener('click', _makeNewProject);
 
-        const newProjectName = new Project.myProject(`${newProjectName}`);
-        Project.ProjectList.push(newProjectName);
-        makeProject();
-    })
+    
 })();

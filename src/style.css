@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: gray;
 }
 
 #container {
@@ -53,19 +53,35 @@ body {
     grid-column: 2/3;
 }
 
+.projectForm-container {
+    background-color: gray;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .newProject-btn {
-    width: 30%;
-    background-color: green;
+    width: 20%;
+    background-color: rgba(0, 255, 0, 0.6);
     border: none;
     padding: 1%;
     text-align: left;
     text-indent: 3%;
     font-size: 20px;
     cursor: pointer;
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
+    margin-bottom: 5px;
+    margin-right: 2%;
 }
 .newProject-btn:hover {
     background-color: rgba(0, 255, 0, 1)
+} 
+
+#project-input {
+    width: 20%;
+    text-indent: 5%;
+    margin-bottom: 5px;
+    margin-right: 2%;
 }

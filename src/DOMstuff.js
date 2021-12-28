@@ -2,101 +2,69 @@
 const DOMstuff = (function(){
 
 //private
-    const _makeChecklistContainer = function(){
-        const checklistContainer = document.createElement('div');
-        checklistContainer.classList.add('checklist-container');
-        document.getElementById('container').appendChild(checklistContainer);
+//this is currrently my most fucking disgusting of a code
+const _makeProject = function(name){
+    const newProject = document.createElement('div');
+    newProject.classList.add('newproject');
+    newProject.innerHTML = `
+    <div class="checklist-container">
+      <div class="header-container">
+          <h1>${name}</h1>
+      </div>
+      <div class="task-container" id="${name}"></div>
+      <form class="form-container">
+         <input type="text" class="task-input" placeholder="Task Name">
+         <input type="date" class="date-input">
+         <button>+ NEW TASK</button>
+      </form>
+    </div>`;
 
-        return checklistContainer;
-    };
+    document.getElementById('container').appendChild(newProject);
 
-    const _makeHeaderContainer = function(){
-        const headerContainer = document.createElement('div');
-        headerContainer.classList.add('header-container');
-        document.querySelector('.checklist-container').appendChild(headerContainer);
+    return newProject;
+};
 
-        return headerContainer;
-    };
-
-    const _makeHeader = function(name){
-        const header = document.createElement('h1');
-        header.innerText = name;
-        document.querySelector('.header-container').appendChild(header);
-
-        return header;
-    };
-
-    const _makeTaskContainer = function(){
-        const taskContainer = document.createElement('div');
-        taskContainer.classList.add('task-container');
-        document.querySelector('.checklist-container').appendChild(taskContainer);
-
-        return taskContainer;
-    };
-
-    const _makeFormContainer = function(){
-        const formContainer = document.createElement('form');
-        formContainer.classList.add('form-container');
-        document.querySelector('.checklist-container').appendChild(formContainer);
+    const _makeProjectFormContainer = function(){
+        const formContainer = document.createElement('div');
+        formContainer.classList.add('projectForm-container');
+        document.body.appendChild(formContainer);
 
         return formContainer;
     };
 
-    const _makeTaskInput = function(){
-        const taskInput = document.createElement('input');
-        taskInput.setAttribute('type', 'text');
-        taskInput.classList.add('task-input');
-        taskInput.placeholder = `Task Name`;
-        document.querySelector('.form-container').appendChild(taskInput);
+    const _makeProjectForm = function(){
+        const projectInput = document.createElement('input');
+        projectInput.setAttribute('type', 'text');
+        projectInput.placeholder = `New Project Name`;
+        projectInput.id = `project-input`;
+        document.querySelector('.projectForm-container').appendChild(projectInput);
 
-        return taskInput;
-    };
-
-    const _makeDateInput = function(){
-        const dateInput = document.createElement('input');
-        dateInput.setAttribute('type', 'date');
-        dateInput.classList.add('date-input');
-        document.querySelector('.form-container').appendChild(dateInput);
-
-        return dateInput;
-    };
-
-    const _makeFormButton = function(){
-        const formBtn = document.createElement('button');
-        formBtn.innerText = `+New Task`;
-        document.querySelector('.form-container').appendChild(formBtn);
-
-        return formBtn;
+        return projectInput;
     };
 
     const _makeProjectBtn = function(){
         const newProject = document.createElement('button');
         newProject.classList.add('newProject-btn');
         newProject.innerText = `+ NEW PROJECT`;
-        document.getElementById('container').appendChild(newProject);
+        document.querySelector('.projectForm-container').appendChild(newProject);
 
         return newProject;
     };
 
 //public
     const makeProject = function(name){
-        _makeChecklistContainer();
-        _makeHeaderContainer();
-        _makeHeader(name);
-        _makeTaskContainer();
-        _makeFormContainer();
-        _makeTaskInput();
-        _makeDateInput();
-        _makeFormButton();
+        _makeProject(name);
     };
 
-    const makeProjectBtn = function(){
+    const makeProjectForm = function(){
+        _makeProjectFormContainer();
+        _makeProjectForm();
         _makeProjectBtn();
     };
 
     return {
         makeProject,
-        makeProjectBtn,
+        makeProjectForm,
     };
 
 })();
