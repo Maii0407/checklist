@@ -1,7 +1,12 @@
-import './style.css';
-import { DOMstuff } from "./DOMstuff";
-import { Logic } from './logic';
+import './defaultStuff.css';
+import { defaultStuff } from './defaultStuff/defaultStuff';
+//import './style.css';
 
+const todoLIST = (function(){
+    defaultStuff.makeDefault();
+})();
+
+/*
 const CheckList = (function(){
     DOMstuff.makeProjectForm();
     Logic.projectArray;
@@ -48,4 +53,4 @@ const CheckList = (function(){
     });
 
     
-})();
+})(); */
