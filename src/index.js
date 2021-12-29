@@ -1,9 +1,16 @@
 import './defaultStuff.css';
+import './newProject.css';
 import { defaultStuff } from './defaultStuff/defaultStuff';
+import { createStuff } from './createStuff/createStuff';
 //import './style.css';
 
 const todoLIST = (function(){
     defaultStuff.makeDefault();
+    createStuff.generateProject();
+    
+//below is eventlisteners
+    document.querySelector('.newProject-btn').addEventListener('click', createStuff.makeNewProject);
+
 })();
 
 /*
@@ -11,36 +18,8 @@ const CheckList = (function(){
     DOMstuff.makeProjectForm();
     Logic.projectArray;
 
-//below is functions
-    const generateProject = function(){
-        document.getElementById('container').innerHTML = '';
-        Logic.projectArray.forEach(project => {
-            DOMstuff.makeProject(project.name);
 
-            project.taskList.forEach(task => {
-                function makeTask(project){
-                    const newTask = document.createElement('div');
-                    newTask.classList.add('newtask');
-                    newTask.innerText = `${task.name} ${task.date}`;
-                    document.getElementById(`${project}`).appendChild(newTask);
-            
-                    return newTask;
-                };
-            })
-        });
-        
-    };
 
-    const makeNewProject = function(newProject){
-        const text = document.getElementById('project-input');
-
-        newProject = new Logic.Project(text.value);
-        Logic.projectArray.push(newProject);
-        text.value = '';
-        generateProject();
-    };
-
-    generateProject();
 
 //below is eventlisteners
     document.querySelector('.newProject-btn').addEventListener('click', makeNewProject);

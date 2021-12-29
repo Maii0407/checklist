@@ -44,7 +44,7 @@ body {
 }
 
 .newProject-btn {
-    background-color: rgba(0, 255, 0, 0.5);
+    background-color: rgba(0, 255, 0, 0.6);
     width: 90%;
     height: 30px;
     text-align: left;
@@ -55,5 +55,5 @@ body {
     cursor: pointer;
 }
 .newProject-btn:hover {
-    background-color: rgba(0, 255, 0, 0.9);
+    background-color: rgba(0, 255, 0, 1);
 }

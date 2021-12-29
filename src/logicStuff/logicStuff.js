@@ -16,6 +16,12 @@ const logicStuff = (function(){
         }
     }
 
+    let num01 = new project(`one`);
+    projectList.push(num01);
+
+    let num02 = new task(`two`, `29/12/2021`);
+    num01.taskList.push(num02);
+
     return {
         projectList,
         project,
