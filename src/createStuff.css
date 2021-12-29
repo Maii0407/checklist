@@ -40,10 +40,47 @@
     border: none;
     text-align: left;
     text-indent: 5px;
-    background-color: rgba(0, 255, 0, 0.6);
+    background-color: rgba(0, 255, 0, 0.5);
     cursor: pointer;
 }
 
 .form-container button:hover {
     background-color: rgba(0, 255, 0, 1);
+}
+
+.task-container {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-task {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.task-name {
+    width: 70%;
+    margin-left: 5px;
+}
+
+.task-date {
+    width: 30%;
+}
+
+.task-remove {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    opacity: 0.6;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.task-remove:hover {
+    opacity: 1;
 }

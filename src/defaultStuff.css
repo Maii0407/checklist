@@ -1,4 +1,5 @@
 body {
+    background-color: gray;
     display: flex;
     flex-direction: column;
 }
@@ -6,7 +7,6 @@ body {
 #upper-container {
     width: 100%;
     height: 100px;
-    background-color: red;
 }
 
 #upper-container h1 {
@@ -26,12 +26,10 @@ body {
 
 #projectForm-container {
     width: 20%;
-    background-color: gray;
 }
 
 #main-content {
     width: 80%;
-    background-color: blue;
 }
 
 .project-input {
