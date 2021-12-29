@@ -1,42 +1,51 @@
 import './style.css';
 import { DOMstuff } from "./DOMstuff";
-import { Project } from './project';
+import { Logic } from './logic';
 
 const CheckList = (function(){
     DOMstuff.makeProjectForm();
-    Project.ProjectList;
+    Logic.projectArray;
 
-//private
-    const _makeProject = function(){
-        for(let obj of Project.ProjectList){
-            DOMstuff.makeProject(obj.name);
-        }
+//below is functions
+    const generateProject = function(){
+        document.getElementById('container').innerHTML = '';
+        Logic.projectArray.forEach(project => {
+            DOMstuff.makeProject(project.name);
+
+            project.taskList.forEach(task => {
+                function makeTask(project){
+                    const newTask = document.createElement('div');
+                    newTask.classList.add('newtask');
+                    newTask.innerText = `${task.name} ${task.date}`;
+                    document.getElementById(`${project}`).appendChild(newTask);
+            
+                    return newTask;
+                };
+            })
+        });
+        
     };
 
-    const _makeNewProject = function(newProject){
+    const makeNewProject = function(newProject){
         const text = document.getElementById('project-input');
 
-        newProject = new Project.myProject(text.value);
-        Project.ProjectList.push(newProject);
-        document.getElementById('container').innerHTML = '';
+        newProject = new Logic.Project(text.value);
+        Logic.projectArray.push(newProject);
         text.value = '';
-        _makeProject();
+        generateProject();
     };
 
-//public
-    const makeProject = function(){
-        _makeProject();
-    };
+    generateProject();
 
-    makeProject();
+//below is eventlisteners
+    document.querySelector('.newProject-btn').addEventListener('click', makeNewProject);
 
-    document.querySelector('.newProject-btn').addEventListener('click', _makeNewProject);
     document.querySelector('.open-btn').addEventListener('click', function(){
         document.querySelector('.projectForm-container').style.width = '250px';
-    })
+    });
     document.querySelector('.close-btn').addEventListener('click', function(){
         document.querySelector('.projectForm-container').style.width = '0';
-    })
+    });
 
     
 })();

@@ -1,29 +1,30 @@
 import openProjectForm from './outline_menu_black_24dp.png';
 
 const DOMstuff = (function(){
-
-//private
 //this is currrently my most fucking disgusting of a code
-const _makeProject = function(name){
-    const newProject = document.createElement('div');
-    newProject.classList.add('newproject');
-    newProject.innerHTML = `
-    <div class="checklist-container">
-      <div class="header-container">
-          <h1>${name}</h1>
-      </div>
-      <div class="task-container" id="${name}"></div>
-      <form class="form-container">
-         <input type="text" class="task-input" placeholder="Task Name">
-         <input type="date" class="date-input">
-         <button>+ NEW TASK</button>
-      </form>
-    </div>`;
+//this makes the new project
 
-    document.getElementById('container').appendChild(newProject);
+    const makeProject = function(project){
+        const newProject = document.createElement('div');
+        newProject.classList.add('newproject');
+        newProject.innerHTML = `
+        <div class="checklist-container">
+          <div class="header-container">
+              <h1>${project}</h1>
+          </div>
+          <div class="task-container" id="${project}"></div>
+          <form class="form-container">
+             <input type="text" class="task-input" placeholder="Task Name">
+             <input type="date" class="date-input">
+             <button>+ NEW TASK</button>
+          </form>
+        </div>`;
+    
+        document.getElementById('container').appendChild(newProject);
 
-    return newProject;
-};
+    
+        return newProject;
+    };
 
     const _makeProjectFormContainer = function(){
         const formContainer = document.createElement('div');
@@ -70,11 +71,7 @@ const _makeProject = function(name){
         return openBtn;
     };
 
-//public
-    const makeProject = function(name){
-        _makeProject(name);
-    };
-
+//this makes a form so users can make new projects
     const makeProjectForm = function(){
         _makeOpenProjectFormBtn();
         _makeProjectFormContainer();
