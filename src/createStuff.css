@@ -28,6 +28,7 @@
 
 .task-name {
     width: 70%;
+    max-height: 1000px;
     margin-left: 5px;
 }
 

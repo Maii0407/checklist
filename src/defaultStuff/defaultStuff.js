@@ -65,7 +65,8 @@ const defaultStuff = (function(){
 
         logicStuff.projectList.forEach(project => {
             const options = document.createElement('option');
-            options.value = project.name;
+            options.label = project.name;
+            options.value = logicStuff.projectList.indexOf(project);
 
             document.getElementById('projectList').appendChild(options);
         })

@@ -52,13 +52,14 @@ const createStuff = (function(){
     };
 
     function makeNewTask(){
+        const projectName = document.querySelector('.inputList');
         const taskName = document.querySelector('.taskName-input');
         const taskDate = document.querySelector('.taskDate-input');
 
         const newTask = new logicStuff.task(taskName.value, taskDate.value);
-        logicStuff.projectList[0].taskList.push(newTask);
+        logicStuff.projectList[projectName.value].taskList.push(newTask);
 
-        generateTask(logicStuff.projectList[0]);
+        generateTask(logicStuff.projectList[projectName.value]);
         projectName.value = '';
         taskName.value = '';
         taskDate.value = '';
