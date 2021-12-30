@@ -24,8 +24,15 @@ body {
     flex-direction: row;
 }
 
-#projectForm-container {
+#form-container {
     width: 20%;
+}
+
+#form-container p {
+    text-indent: 10px;
+    border-bottom: 1px solid black;
+    margin-left: 5px;
+    font-weight: bold;
 }
 
 #main-content {
@@ -54,4 +61,12 @@ body {
 }
 .newProject-btn:hover {
     background-color: rgba(0, 255, 0, 1);
+}
+
+.task-form input {
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    text-indent: 5%;
 }

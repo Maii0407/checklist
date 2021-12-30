@@ -11,11 +11,6 @@ const createStuff = (function(){
              `<div class="header-container">
                   <h1>${project.name}</h1>
               </div>
-              <form class="form-container">
-                 <input type="text" class="task-input" placeholder="Task Name">
-                 <input type="date" class="date-input">
-                 <button class="${project.name}">+ NEW TASK</button>
-              </form>
               <div class="task-container" id="${project.name}"></div>`;
 
             document.getElementById('main-content').appendChild(newProject);
@@ -54,13 +49,6 @@ const createStuff = (function(){
         logicStuff.projectList.push(newProject);
         input.value = '';
         generateProject();
-    };
-
-    function makeNewTask(newTask){
-        const taskName = document.querySelector('.task-input');
-        const taskDate = document.querySelector('.date-input');
-
-        newTask = new logicStuff.task(taskName.value, taskDate.value);
     };
 
     return {
