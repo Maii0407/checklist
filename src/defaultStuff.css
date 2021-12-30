@@ -70,3 +70,37 @@ body {
     border: none;
     text-indent: 5%;
 }
+
+.taskName-input {
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    text-indent: 5%;
+    margin-top: 5%;
+}
+
+.taskDate-input {
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    text-indent: 5%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.taskSubmit-btn {
+    background-color: rgba(0, 255, 0, 0.6);
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    text-align: left;
+    text-indent: 5%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+.taskSubmit-btn:hover {
+    background-color: rgba(0, 255, 0, 1);
+}

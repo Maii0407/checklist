@@ -54,7 +54,9 @@ const defaultStuff = (function(){
         document.getElementById('form-container').appendChild(formContainer);
 
         const inputList = document.createElement('input');
+        inputList.placeholder = `Enter Project Name`;
         inputList.setAttribute('list', 'projectList');
+        inputList.classList.add('inputList');
         document.querySelector('.task-form').appendChild(inputList);
 
         const dataList = document.createElement('datalist');
@@ -69,6 +71,35 @@ const defaultStuff = (function(){
         })
     };
 
+    function makeNameInput(){
+        const taskName = document.createElement('input');
+        taskName.setAttribute('type', 'text');
+        taskName.placeholder = `Enter New Task`;
+        taskName.classList.add('taskName-input');
+        document.getElementById('form-container').appendChild(taskName);
+
+        return taskName;
+    };
+
+    function makeDateInput(){
+        const dateInput = document.createElement('input');
+        dateInput.setAttribute('type', 'date');
+        dateInput.classList.add('taskDate-input');
+        document.getElementById('form-container').appendChild(dateInput);
+
+        return dateInput;
+    };
+
+    function makeSubmitButton(){
+        const submitBtn = document.createElement('button');
+        submitBtn.setAttribute('type', 'button');
+        submitBtn.classList.add('taskSubmit-btn');
+        submitBtn.innerText = `+ NEW TASK`;
+        document.getElementById('form-container').appendChild(submitBtn);
+
+        return submitBtn;
+    };
+
 //below is functions that makes things easier to remember LOL
 
     function projectForm(){
@@ -80,6 +111,9 @@ const defaultStuff = (function(){
     function taskForm(){
         makeTaskFormHeader();
         makeTaskOptions();
+        makeNameInput();
+        makeDateInput();
+        makeSubmitButton();
     };
 
     function makeDefault(){
@@ -92,6 +126,7 @@ const defaultStuff = (function(){
 
     return{
         makeDefault,
+        makeTaskOptions,
     };
 
 })();

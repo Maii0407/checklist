@@ -51,9 +51,23 @@ const createStuff = (function(){
         generateProject();
     };
 
+    function makeNewTask(){
+        const taskName = document.querySelector('.taskName-input');
+        const taskDate = document.querySelector('.taskDate-input');
+
+        const newTask = new logicStuff.task(taskName.value, taskDate.value);
+        logicStuff.projectList[0].taskList.push(newTask);
+
+        generateTask(logicStuff.projectList[0]);
+        projectName.value = '';
+        taskName.value = '';
+        taskDate.value = '';
+    };
+
     return {
         generateProject,
         makeNewProject,
+        makeNewTask,
     };
 })();
 
