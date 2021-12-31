@@ -52,7 +52,7 @@ const createStuff = (function(){
     };
 
     function makeNewTask(){
-        const projectName = document.querySelector('.inputList');
+        const projectName = document.getElementById('projectList');
         const taskName = document.querySelector('.taskName-input');
         const taskDate = document.querySelector('.taskDate-input');
 

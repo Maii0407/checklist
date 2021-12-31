@@ -53,13 +53,13 @@ const defaultStuff = (function(){
         formContainer.classList.add('task-form');
         document.getElementById('form-container').appendChild(formContainer);
 
-        const inputList = document.createElement('input');
-        inputList.placeholder = `Enter Project Name`;
-        inputList.setAttribute('list', 'projectList');
-        inputList.classList.add('inputList');
+        const inputList = document.createElement('label');
+        inputList.innerText = `Choose Project Name`;
+        inputList.setAttribute('for', 'projectList');
         document.querySelector('.task-form').appendChild(inputList);
 
-        const dataList = document.createElement('datalist');
+        const dataList = document.createElement('select');
+        dataList.setAttribute('name', 'projectList');
         dataList.id = `projectList`;
         document.querySelector('.task-form').appendChild(dataList);
 

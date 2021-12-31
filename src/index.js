@@ -8,8 +8,6 @@ import { logicStuff } from './logicStuff/logicStuff';
 const todoLIST = (function(){
     defaultStuff.makeDefault();
     createStuff.generateProject();
-
-    console.table(logicStuff.projectList);
     
 //below is eventlisteners
     document.querySelector('.newProject-btn').addEventListener('click', function(){
