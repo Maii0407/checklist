@@ -10,6 +10,7 @@ const createStuff = (function(){
             newProject.innerHTML =
              `<div class="header-container">
                   <h1>${project.name}</h1>
+                  <button type="button">REMOVE PROJECT</button>
               </div>
               <div class="task-container" id="${project.name}"></div>`;
 
@@ -27,10 +28,10 @@ const createStuff = (function(){
             const newTask = document.createElement('div');
             newTask.classList.add('new-task');
             newTask.innerHTML = 
-                `<button class="task-checklist">OK</button>
+                `<button class="task-check">OK</button>
                  <div class="task-name">${task.name}</div>
                  <div class="task-date">${task.date}</div>
-                 <button class="task-remove">X</button>`;
+                 <button class="task-remove">REMOVE</button>`;
             
             document.getElementById(project.name).appendChild(newTask);
 
@@ -60,7 +61,6 @@ const createStuff = (function(){
         logicStuff.projectList[projectName.value].taskList.push(newTask);
 
         generateTask(logicStuff.projectList[projectName.value]);
-        projectName.value = '';
         taskName.value = '';
         taskDate.value = '';
     };

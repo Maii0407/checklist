@@ -1,5 +1,5 @@
 .new-project {
-    width: 80%;
+    width: 90%;
     margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 3%;
@@ -8,14 +8,41 @@
     flex-direction: column;
 }
 
+.header-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .header-container h1 {
     text-indent: 15px;
+    width: 83%;
+}
+
+.header-container button {
+    height: 50%;
+    background-color: red;
+    opacity: 0.6;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.header-container button:hover {
+    opacity: 1;
 }
 
 .task-container {
     border: 1px solid red;
     display: flex;
     flex-direction: column;
+}
+
+.task-check {
 }
 
 .new-task {
@@ -27,13 +54,19 @@
 }
 
 .task-name {
-    width: 70%;
+    width: 50%;
     max-height: 1000px;
     margin-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-indent: 10px;
+    word-wrap: break-word;
 }
 
 .task-date {
-    width: 30%;
+    width: 35%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .task-remove {
@@ -43,7 +76,9 @@
     background-color: red;
     opacity: 0.6;
     cursor: pointer;
-    margin-right: 5px;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .task-remove:hover {
