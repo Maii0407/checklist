@@ -23,7 +23,7 @@
     background-color: red;
     opacity: 0.6;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     margin-top: 20px;
     padding: 10px;
@@ -37,7 +37,6 @@
 }
 
 .task-container {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
 }
@@ -48,7 +47,8 @@
 .new-task {
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    outline: 1px solid black;
+    margin-top: 1px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
