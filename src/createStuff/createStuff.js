@@ -10,7 +10,7 @@ const createStuff = (function(){
             newProject.innerHTML =
              `<div class="header-container">
                   <h1>${project.name}</h1>
-                  <button type="button">REMOVE PROJECT</button>
+                  <button type="button" class="removeProject-btn" value="${logicStuff.projectList.indexOf(project)}">REMOVE PROJECT</button>
               </div>
               <div class="task-container" id="${project.name}"></div>`;
 
@@ -31,7 +31,7 @@ const createStuff = (function(){
                 `<button class="task-check">OK</button>
                  <div class="task-name">${task.name}</div>
                  <div class="task-date">${task.date}</div>
-                 <button class="task-remove">REMOVE</button>`;
+                 <button class="task-remove" value="${project.taskList.indexOf(task)}" data-projectIndex="${logicStuff.projectList.indexOf(project)}">REMOVE</button>`;
             
             document.getElementById(project.name).appendChild(newTask);
 
@@ -67,6 +67,7 @@ const createStuff = (function(){
 
     return {
         generateProject,
+        generateTask,
         makeNewProject,
         makeNewTask,
     };
