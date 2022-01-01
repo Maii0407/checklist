@@ -28,9 +28,9 @@ const createStuff = (function(){
             const newTask = document.createElement('div');
             newTask.classList.add('new-task');
             newTask.innerHTML = 
-                `<button class="task-check">OK</button>
-                 <div class="task-name">${task.name}</div>
+                `<div class="task-name">${task.name}</div>
                  <div class="task-date">${task.date}</div>
+                 <div class="task-priority">${task.priority}</div>
                  <button class="task-remove" value="${project.taskList.indexOf(task)}" data-projectIndex="${logicStuff.projectList.indexOf(project)}">REMOVE</button>`;
             
             document.getElementById(project.name).appendChild(newTask);
@@ -56,8 +56,9 @@ const createStuff = (function(){
         const projectName = document.getElementById('projectList');
         const taskName = document.querySelector('.taskName-input');
         const taskDate = document.querySelector('.taskDate-input');
+        const taskPriority = document.getElementById(`task-priority`);
 
-        const newTask = new logicStuff.task(taskName.value, taskDate.value);
+        const newTask = new logicStuff.task(taskName.value, taskDate.value, taskPriority.value);
         logicStuff.projectList[projectName.value].taskList.push(newTask);
 
         generateTask(logicStuff.projectList[projectName.value]);

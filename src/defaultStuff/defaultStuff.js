@@ -91,6 +91,24 @@ const defaultStuff = (function(){
         return dateInput;
     };
 
+    function makePriorityInput(){
+        const priorityLabel = document.createElement('label');
+        priorityLabel.innerText = `Choose Task Priority`;
+        priorityLabel.classList.add('priority-label');
+        priorityLabel.setAttribute('for', 'task-priority');
+        document.getElementById('form-container').appendChild(priorityLabel);
+
+        const priorityInput = document.createElement('select');
+        priorityInput.setAttribute('name', 'task-priority');
+        priorityInput.id = `task-priority`;
+        priorityInput.innerHTML = `
+            <option value='Low Priority'>Low Priority</option>
+            <option value='Medium Priority'>Medium Priority</option>
+            <option value='High Priority'>High Priority</option>`;
+
+        document.getElementById('form-container').appendChild(priorityInput);
+    };
+
     function makeSubmitButton(){
         const submitBtn = document.createElement('button');
         submitBtn.setAttribute('type', 'button');
@@ -114,6 +132,7 @@ const defaultStuff = (function(){
         makeTaskOptions();
         makeNameInput();
         makeDateInput();
+        makePriorityInput();
         makeSubmitButton();
     };
 

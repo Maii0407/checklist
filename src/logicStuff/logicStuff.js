@@ -10,17 +10,18 @@ const logicStuff = (function(){
     }
 
     class task {
-        constructor(name,date){
+        constructor(name,date,priority){
             this.name = name;
             this.date = date;
+            this.priority = priority;
         }
     }
 
     let one = new project(`one`);
     projectList.push(one);
 
-    let num02 = new task(`two`, `29/12/2021`);
-    let num03 = new task('three', '11/11/11');
+    let num02 = new task(`two`, `29/12/2021`, `Low Priority`);
+    let num03 = new task('three', '11/11/11', `Low Priority`);
     one.taskList.push(num02,num03);
 
     return {
