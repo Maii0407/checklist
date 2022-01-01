@@ -1,9 +1,10 @@
 .new-project {
-    width: 90%;
-    margin-left: 5%;
+    width: 95%;
+    margin-left: 2%;
     margin-top: 2%;
     margin-bottom: 3%;
-    border: 1px solid black;
+    border: 5px solid black;
+    border-radius: 20px 20px 0 0;
     display: flex;
     flex-direction: column;
 }
@@ -11,10 +12,12 @@
 .header-container {
     display: flex;
     flex-direction: row;
+    background-color: black;
 }
 
 .header-container h1 {
     text-indent: 15px;
+    color: gainsboro;
     width: 83%;
 }
 
@@ -40,17 +43,15 @@
     display: flex;
     flex-direction: column;
 }
-/*
-.task-check {
-}*/
 
 .new-task {
+    background-color: gainsboro;
     display: flex;
     flex-direction: row;
-    outline: 1px solid black;
     margin-top: 1px;
     padding-top: 10px;
     padding-bottom: 10px;
+    outline: 1px solid black;
 }
 
 .task-name {
@@ -64,9 +65,17 @@
 }
 
 .task-date {
-    width: 35%;
+    width: 20%;
     padding-top: 10px;
     padding-bottom: 10px;
+    text-indent: 10px;
+}
+
+.task-priority {
+    width: 20%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-indent: 10px;
 }
 
 .task-remove {
@@ -79,6 +88,7 @@
     padding: 10px;
     padding-right: 20px;
     padding-left: 20px;
+    margin-right: 5px;
 }
 
 .task-remove:hover {

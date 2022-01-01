@@ -17,11 +17,11 @@ const logicStuff = (function(){
         }
     }
 
-    let one = new project(`one`);
+    let one = new project(`Project Number 1`);
     projectList.push(one);
 
-    let num02 = new task(`two`, `29/12/2021`, `Low Priority`);
-    let num03 = new task('three', '11/11/11', `Low Priority`);
+    let num02 = new task(`Remember this date`, `8/6/2022`, `High Priority`);
+    let num03 = new task('Keep chasing your dreams', '11/11/11', `High Priority`);
     one.taskList.push(num02,num03);
 
     return {
